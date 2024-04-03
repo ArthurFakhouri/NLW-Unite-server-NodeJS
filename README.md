@@ -26,3 +26,21 @@ O sistema fará um scan da credencial do participante para permitir a entrada no
 ### Requisitos não-funcionais
 
 - [ ✔ ] O check-in no evento será realizado através de um QRCode;
+
+## Comandos de execução
+
+### Seed
+npx prisma seed
+
+### Executar em modo de desenvolvimento
+npm run dev
+
+### Executar em modo de produção
+01 - npm run build (Para gerar a aplicação e converter para Javascript)
+02 - npm start (Para rodar a aplicação gerada)
+
+### Executar migrations
+npm run db:migrate
+
+### Executar o Prisma Studio
+npm run db:studio
