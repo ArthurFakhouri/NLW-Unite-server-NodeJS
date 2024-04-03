@@ -1,13 +1,24 @@
-import { serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod'
+import { jsonSchemaTransform, serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod'
+
 import fastify from 'fastify'
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
+import fastifyCors from '@fastify/cors';
+
 import { createEvent } from './routes/create-event'
 import { registerForEvent } from './routes/register-for-event';
 import { getEvent } from './routes/get-event';
 import { getAttendeeBadge } from './routes/get-attendee-badge';
+import { checkIn } from './routes/check-in';
+import { getEventAttendees } from './routes/get-event-attendees';
+import { errorHandler } from './error-handler';
 
 const app = fastify()
+
+app.register(fastifyCors, {
+    origin: '*',
+
+})
 
 app.register(fastifySwagger, {
     swagger: {
@@ -33,7 +44,11 @@ app.register(createEvent)
 app.register(registerForEvent)
 app.register(getEvent)
 app.register(getAttendeeBadge)
+app.register(getEventAttendees)
+app.register(checkIn)
 
-app.listen({ port: 3333 }, () => {
+app.setErrorHandler(errorHandler)
+
+app.listen({ port: 3333, host: '0.0.0.0' }, () => {
     console.log("🔥 Server Running 🚀☕")
 })
