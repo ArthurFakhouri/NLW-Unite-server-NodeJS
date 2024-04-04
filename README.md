@@ -1,3 +1,7 @@
+<h1 align="center">
+    <img alt="NLW Unite logo, orange background with black closed HTML tag" title="#NLW-Unite-logo" src=".github/logo.svg" width="250px" />
+</h1>
+
 O pass.in é uma aplicação de **gestão de participantes em eventos presenciais**.
 
 A ferramenta permite que o organizador cadastre um evento e abra uma página pública de inscrição.
