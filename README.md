@@ -40,8 +40,8 @@ npx prisma seed
 npm run dev
 
 ### Executar em modo de produção
-01 - npm run build (Para gerar a aplicação e converter para Javascript)
-02 - npm start (Para rodar a aplicação gerada)
+- 01 - npm run build (Para gerar a aplicação e converter para Javascript)
+- 02 - npm start (Para rodar a aplicação gerada)
 
 ### Executar migrations
 npm run db:migrate
